@@ -7,8 +7,31 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    h1.loading>img{
+      width: 60%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: screen-splash 5000ms infinite linear;
+	    transform-origin:70% 70%;
+    }
+    @keyframes screen-splash{
+      0% { width: 60%; }
+      30% { width: 60%; }
+      40% { width: 64%; }
+      50% { width: 60%; }
+      60% { width: 60%; }
+      70% { width: 63%; }
+      80% { width: 60%; }
+      100% { width: 60%; }
+    }
+  </style>
 </head>
 <body>
-  <app-root></app-root>
+  <app-root>
+    <h1 class="loading"><img src="assets/img/logo.png" alt="Facilita"></h1>
+  </app-root>
 </body>
 </html>
