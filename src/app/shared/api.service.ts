@@ -13,15 +13,15 @@ export class ApiService {
     headers.append('accept', '*/*');
     this.headers = headers;
   }
-  getLists(){
+  getLists(id:string = ""){
     return this.http
-    .get(this.urlApi + "lists", {headers: this.headers})
+    .get(`${this.urlApi}lists${id}`, {headers: this.headers})
     .map(algorithm => algorithm);
   }
-  save(data){
+  save(data) {
     let headers = this.headers;
     headers.append('Contenty-type', 'application/json')
-    return this.http.post(this.urlApi + "test", data).map(data => data).catch(data => data);
+    return this.http.post(`${this.urlApi}lists`, data, {headers: this.headers});
   }
 
 }

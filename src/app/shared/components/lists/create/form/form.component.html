@@ -1,0 +1,20 @@
+<h2 mat-dialog-title>
+  <span *ngIf="!isEdit">Criar</span>
+  <span *ngIf="isEdit">Editar</span>
+  listar
+</h2>
+<mat-dialog-content>
+  <form [formGroup]="form">
+    <mat-form-field>
+      <input matInput formControlName="name" placeholder="Nome da lista">
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <span></span>
+  <button mat-button [mat-dialog-close]="false">CANCELAR</button>
+  <button color="primary" mat-button [disabled]="!form.valid" [mat-dialog-close]="form.value">
+    <span *ngIf="isEdit">SALVAR</span>
+    <span *ngIf="!isEdit">ADICIONAR</span>
+  </button>
+</mat-dialog-actions>

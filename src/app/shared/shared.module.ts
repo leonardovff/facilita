@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatAutocompleteModule, MatCheckboxModule, MatTooltipModule, MatPaginatorModule, MatMenuModule,
@@ -15,6 +14,8 @@ import { ApiService } from './api.service'
 import { NavTopComponent } from './components/nav-top/nav-top.component';
 import { ListsComponent } from './components/lists/lists.component';
 import { ListComponent } from './components/lists/list/list.component';
+import { CreateComponent } from './components/lists/create/create.component';
+import { FormComponent } from './components/lists/create/form/form.component';
 
 @NgModule({
   imports: [
@@ -28,10 +29,10 @@ import { ListComponent } from './components/lists/list/list.component';
     MatSelectModule, MatInputModule, MatTabsModule, MatGridListModule,
     MatRadioModule, MatSliderModule, MatSlideToggleModule, MatSidenavModule,
     MatToolbarModule, MatSnackBarModule, MatDialogModule, MatIconModule, MatCardModule,
-    MatProgressSpinnerModule, MatProgressBarModule,
-    HttpClientModule
+    MatProgressSpinnerModule, MatProgressBarModule
   ],
   entryComponents: [
+    FormComponent
   ],
   exports: [
     MatAutocompleteModule, MatCheckboxModule, MatTooltipModule, MatPaginatorModule,
@@ -40,12 +41,14 @@ import { ListComponent } from './components/lists/list/list.component';
     MatRadioModule, MatSliderModule, MatSlideToggleModule, MatSidenavModule,
     MatToolbarModule, MatSnackBarModule, MatDialogModule, MatIconModule, MatCardModule,
     MatProgressSpinnerModule, MatProgressBarModule,
-    NavTopComponent, HttpClientModule
+    NavTopComponent
   ],
   declarations: [
     NavTopComponent,
     ListsComponent,
-    ListComponent
+    ListComponent,
+    CreateComponent,
+    FormComponent
   ],
   providers: [
     ApiService
