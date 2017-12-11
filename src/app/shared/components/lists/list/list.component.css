@@ -23,3 +23,6 @@ p > time{
   padding: 6px 9px;
   border-radius: 20px;
 }
+mat-chip-list mat-chip{
+  background-color: lightblue;
+}
