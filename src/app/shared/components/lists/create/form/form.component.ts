@@ -9,6 +9,7 @@ import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material'
 })
 export class FormComponent implements OnInit {
   form: FormGroup;
+  id: number = null;
   isEdit:boolean = false;
   constructor(
     private fb: FormBuilder,
@@ -27,6 +28,7 @@ export class FormComponent implements OnInit {
     });
     if(data){
       this.isEdit = true;
+      this.id = data.id;
       this.form.setValue(data);
     }
   }

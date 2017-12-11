@@ -1,11 +1,12 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class ApiService {
-  headers
+  headers:any;
+  needUpdate: EventEmitter<any> = new EventEmitter();
   urlApi:string = 'http://localhost:3001/';
   constructor(private http:HttpClient) {
     let headers = new HttpHeaders();
@@ -16,6 +17,11 @@ export class ApiService {
   getLists(id:string = ""){
     return this.http
     .get(`${this.urlApi}lists${id}`, {headers: this.headers})
+    .map(algorithm => algorithm);
+  }
+  excluir(id: number ){
+    return this.http
+    .delete(`${this.urlApi}lists/${id}`, {headers: this.headers})
     .map(algorithm => algorithm);
   }
   save(data) {

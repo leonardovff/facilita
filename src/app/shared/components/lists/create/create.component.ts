@@ -34,14 +34,25 @@ export class CreateComponent implements OnInit {
     let dialogRef = this.dialog.open(FormComponent, config);
     dialogRef.afterClosed().subscribe(result => {
       if(result){
-        this.save(result);
+        if(result.excluir){
+          this.excluir(result.id);
+        } else if (result){
+          this.save(result);
+        }
       }
       this.router.navigate(['/listas']);
     });
     return dialogRef;
   }
   save(data){
-    this.api.save(data).subscribe();
+    this.api.save(data).subscribe(data => {
+      this.api.needUpdate.emit();
+    });
+  }
+  excluir(id: number){
+    this.api.excluir(id).subscribe(data => {
+      this.api.needUpdate.emit();
+    });
   }
   captureData(id){
     this.api.getLists(`\\${id}`).subscribe(list => {

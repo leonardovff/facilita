@@ -8,6 +8,7 @@
     <mat-form-field>
       <input matInput formControlName="name" placeholder="Nome da lista">
     </mat-form-field>
+    <button [mat-dialog-close]="{excluir: true, id: id}" *ngIf="isEdit" mat-raised-button color="accent" mat-raz>EXCLUIR LISTA</button>
   </form>
 </mat-dialog-content>
 <mat-dialog-actions>
