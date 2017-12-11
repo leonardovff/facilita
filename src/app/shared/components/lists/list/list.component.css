@@ -1,0 +1,25 @@
+mat-list-item{
+  border-bottom: 1px solid #8080801a;
+}
+.space{
+  flex: 1 1 auto;
+}
+mat-list-item h3[matLine]{
+  margin-bottom: 0.3em;
+}
+mat-chip-list{
+  margin-bottom: 0.3em;
+}
+p{
+  font-size: 0.7em;
+  text-align: right;
+  min-width: 126px;
+}
+p > time{
+  display: inline-block;
+  background: blue;
+  color: white;
+  margin-bottom: 0.4em;
+  padding: 6px 9px;
+  border-radius: 20px;
+}

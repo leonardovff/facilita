@@ -1,0 +1,17 @@
+<mat-list>
+  <mat-list-item>
+    <h3 matLine>{{list.name}}</h3>
+    <mat-chip-list matLine>
+      <mat-chip *ngFor="let tag of list.tags">{{tag}}</mat-chip>
+    </mat-chip-list>
+    <span class="space"></span>
+
+    <p>
+      <time *ngIf="list.dateRemember" datetime="2017-02-28">{{list.dateRemember}}</time><br>
+      R$ {{list.valueMin}} ~ {{list.valueMax}}
+    </p>
+    <a routerLink="1" mat-icon-button>
+      <mat-icon>chevron_right</mat-icon>
+    </a>
+  </mat-list-item>
+</mat-list>

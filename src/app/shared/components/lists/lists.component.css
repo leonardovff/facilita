@@ -1,0 +1,8 @@
+mat-card{
+  padding: 0;
+}
+:host{
+  width: 100%;
+  display: inline-block;
+  margin-top: 0.6em;
+}
