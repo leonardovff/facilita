@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ApiService } from './../../api.service';
 @Component({
   selector: 'app-lists',
   templateUrl: './lists.component.html',
   styleUrls: ['./lists.component.css']
 })
 export class ListsComponent implements OnInit {
-   data: [any] = [
+   data: any[any] = [
     {
       name: "Tuning em chevette",
       valueMin: 100.01,
@@ -36,9 +36,12 @@ export class ListsComponent implements OnInit {
       tags:['Hardware'],
     }
   ];
-  constructor() { }
+  constructor(private api: ApiService) { }
 
   ngOnInit() {
+    this.api.getLists().subscribe(lists =>{
+      this.data = lists;
+    })
   }
 
 }

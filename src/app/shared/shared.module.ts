@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatAutocompleteModule, MatCheckboxModule, MatTooltipModule, MatPaginatorModule, MatMenuModule,
@@ -9,6 +10,8 @@ import {
   MatGridListModule, MatRadioModule, MatSliderModule, MatSlideToggleModule, MatSidenavModule, MatToolbarModule,
   MatSnackBarModule, MatDialogModule, MatIconModule, MatCardModule, MatProgressSpinnerModule, MatProgressBarModule
 } from '@angular/material';
+
+import { ApiService } from './api.service'
 import { NavTopComponent } from './components/nav-top/nav-top.component';
 import { ListsComponent } from './components/lists/lists.component';
 import { ListComponent } from './components/lists/list/list.component';
@@ -25,7 +28,8 @@ import { ListComponent } from './components/lists/list/list.component';
     MatSelectModule, MatInputModule, MatTabsModule, MatGridListModule,
     MatRadioModule, MatSliderModule, MatSlideToggleModule, MatSidenavModule,
     MatToolbarModule, MatSnackBarModule, MatDialogModule, MatIconModule, MatCardModule,
-    MatProgressSpinnerModule, MatProgressBarModule
+    MatProgressSpinnerModule, MatProgressBarModule,
+    HttpClientModule
   ],
   entryComponents: [
   ],
@@ -36,7 +40,7 @@ import { ListComponent } from './components/lists/list/list.component';
     MatRadioModule, MatSliderModule, MatSlideToggleModule, MatSidenavModule,
     MatToolbarModule, MatSnackBarModule, MatDialogModule, MatIconModule, MatCardModule,
     MatProgressSpinnerModule, MatProgressBarModule,
-    NavTopComponent
+    NavTopComponent, HttpClientModule
   ],
   declarations: [
     NavTopComponent,
@@ -44,6 +48,7 @@ import { ListComponent } from './components/lists/list/list.component';
     ListComponent
   ],
   providers: [
+    ApiService
   ]
 })
 export class SharedModule { }
